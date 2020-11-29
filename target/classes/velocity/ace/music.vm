@@ -1,0 +1,34 @@
+#parse("/velocity/layout.vm")
+#@mainLayout()
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/smusic.css">
+    <!--Javascript-->
+    <script src="/js/swalMod.js"></script>
+    <!--Start From Here-->
+    <div class="container-fluid">
+        <div class="container banner text-center">
+            <img src="/images/h/music_h.png" width="200px" height="200px">
+            <div class="row">
+                #foreach($music in $musicList)
+                    <div class="col-md-4">
+                        <a onclick="popIp()">
+                            <div class="card shadow">
+                                <div class="card-title">
+                                    <h4>$music.getMusicname()</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="inner">
+                                        <img class="card-img-middle" src="$music.getMusicimg()" width="300" height="340">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text">Artist: $music.getMusicartist()</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                #end
+            </div>
+        </div>
+    </div>
+#end

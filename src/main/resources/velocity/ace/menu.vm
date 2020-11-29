@@ -1,0 +1,168 @@
+#parse("/velocity/layout.vm")
+#@mainLayout()
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/smenu.css">
+    <script src="/js/swalMod.js"></script>
+    <!--Start From Here-->
+    <div class="container-fluid">
+        <div class="container banner text-center">
+            <img class="menu-icon" src="/images/h/menu_h.png" width="200px" height="200px">
+            <a href="/cart/" data-toggle="modal" data-target="#myModal">
+                <h3 class="px-5 cart">
+                    <i class="fas fa-shopping-cart"></i> <span id="cart_count" class="text-success">$count</span>
+                </h3>
+            </a>
+            <div class="line"></div>
+            <div class="row">
+                #foreach($menu in $menuList)
+                    <div class="col-md-3">
+                        <div class="card shadow">
+                            <div class="inner">
+                                <img class="card-img-top" src="$menu.getMenuimg()" width="200" height="150">
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="card-title">
+                                    <h4>$menu.getMenuname()</h4>
+                                    <h6><span>$</span>$menu.getPrice()</h6>
+                                </div>
+                                <p class="card-text">$menu.getMenudesc()</p>
+                                <form method="post">
+                                    <input type="hidden" name="menu_name" value="$menu.getMenuname()">
+                                    <input type="hidden" name="menu_img" value="$menu.getMenuimg()">
+                                    <input type="hidden" name="menu_price" value="$menu.getPrice()">
+                                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title-1">My Cart</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="$WebPath.getITEM_DELETE()">
+                    #foreach($cartItems in $cartList)
+                        <div class="border rounded">
+                            <div class="row bg-white">
+                                <div class="col-md-3" style="margin-top: 2rem;">
+                                    <img src="$cartItems.getCartmenuimg()" class="rounded-circle" width="220px" height="200px">
+                                </div>
+                                <div class="col-md-6" style="margin-left: 3rem; margin-top: 3rem;">
+                                    <h5 class="pt-2">$cartItems.getCartmenuname()</h5>
+                                    <h5 class="pt-2"><span>$</span>$cartItems.getCountnprice()</h5>
+
+                                    <input type="hidden" name="getItemName" value="$cartItems.getCartmenuname()">
+                                    <button type="submit" class="btn btn-danger" name="remove" value="$cartItems.getCartmenuname()" style="margin-top: 2.2rem;">
+                                        <i data-feather="trash"></i> Remove
+                                    </button>
+                                </div>
+                                <div class="col-md-2" style="margin-top: 3rem">
+                                    <div>
+                                        <label class="qty-count">x$cartItems.getCount()</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    #end
+                    </form>
+                    #if($cartList.size() > 0)
+                        <div class="line-only"></div>
+                        <div class="container">
+                            <h5 style="margin-top: 2rem">
+                                <div class="row bg-white" style="padding-bottom: 0.8rem">
+                                    <div class="col-md-9">
+                                        Subtotal
+                                    </div>
+                                    <div class="col-md-2">
+                                        #foreach($sum in $sumPrices)
+                                            $$sum.getSumPrices()
+                                        #end
+                                    </div>
+                                </div>
+                                <div class="row bg-white" style="padding-bottom: 0.8rem">
+                                    <div class="col-md-9">
+                                        Taxes(10%)
+                                    </div>
+                                    <div class="col-md-2">
+                                        #foreach($sum in $sumPrices)
+                                            $$sum.getTaxes()
+                                        #end
+                                    </div>
+                                </div>
+                            </h5>
+                        </div>
+                        <div class="line-fancy"></div>
+                        <div class="container">
+                            <h5 style="margin-top: 2rem">
+                                <div class="row bg-white" style="padding-bottom: 0.8rem">
+                                    <div class="col-md-9">
+                                        Total
+                                    </div>
+                                    <div class="col-md-2">
+                                        #foreach($sum in $sumPrices)
+                                            $$sum.getTotal()
+                                            <input type="hidden" name="cart_menu_total_for_ca" value="$sum.getTotal()">
+                                        #end
+                                    </div>
+                                </div>
+                            </h5>
+                        </div>
+                    #end
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i data-feather="x"></i> Cancel
+                    </button>
+                    #if($cartList.size() > 0)
+                        <form method="post" action="$WebPath.getITEM_DELETE_ALL()">
+                            <button type="submit" class="btn btn-danger">
+                                <i data-feather="trash-2"></i> Remove All
+                            </button>
+                        </form>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#orderSubmit">
+                            <i data-feather="check-square"></i> Order
+                        </button>
+                    #else
+                        <button type="submit" class="btn btn-danger" disabled>
+                            <i data-feather="trash-2"></i> Remove All
+                        </button>
+                        <button type="submit" class="btn btn-success" disabled>
+                            <i data-feather="check-square"></i> Order
+                        </button>
+                    #end
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderSubmit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title-2">Order Information</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h6><i class="fa fa-question-circle" style="font-size:20px;color:#00BFFF"></i> Are you sure want to submit your order?</h6>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:setTimeout(function(){window.location = '$WebPath.getREDIRECT()'}, 2000);" class="btn btn-secondary" onclick="popUp()">
+                        <i data-feather="check"></i> Yes
+                    </a>
+                    <a href="" class="btn btn-secondary" data-dismiss="modal">
+                        <i data-feather="x"></i> No
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+#end

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+/* ---------------------------------------------------
+    MENU CONTENT
+----------------------------------------------------- */
+.container-fluid{
+    margin-top: 72px;
+}
+.menu-icon{
+    margin-bottom: 20px;
+}
+.container-fluid .text-center a{
+    text-decoration: none !important;
+}
+.container-fluid .text-center a h3{
+    color: #8B4513;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #8FBC8F;
+    box-shadow: 0 5px #999;
+    margin: 5px 0;
+}
+.container-fluid .text-center a h3:hover{
+    color: #8FBC8F;
+}
+.container-fluid .text-center .row{
+    margin-top: 25px;
+}
+.text-center .row .column{
+    margin-left: 28.1rem;
+}
+.card{
+    width: 15rem;
+    height: 25rem;
+}
+.row .col-md-3{
+    margin-bottom: 35px;
+}
+.inner{
+    overflow: hidden;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.3);
+}
+.card-body h4{
+    font-weight: bold;
+}
+.card-body h6{
+    color: #808080;
+    font-weight: bold;
+}
+.card-body p{
+    margin-bottom: 25px;
+}
+.card-body button{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    width: 125px;
+    padding: 8px 18px;
+    color: #FFF !important;
+    text-decoration: none !important;
+    background-image: repeating-linear-gradient(#8B4513, #000000);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 4px #999;
+    transition: 0.5s;
+}
+.card-body button:hover{
+    color: #000 !important;
+    background-image: radial-gradient(#FFFFFF, #8FBC8F);
+    cursor: pointer;
+}
+.card-body button:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+.modal-title-1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #8B4513;
+    text-shadow: 2px 3px #999;
+}
+.qty-count{
+    font-weight: bold;
+    font-size: 18px;
+    color: crimson;
+}
+.line-only{
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 5px #999;
+    margin: 5px 0;
+}
+.line-fancy{
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid #8B4513;
+    box-shadow: 0 5px #8FBC8F;
+    margin: 5px 0;
+}
+
+/* ---------------------------------------------------
+    MEDIA
+----------------------------------------------------- */
+@media screen and (max-width: 768px)  {
+    .col-md-3{
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        margin-left: 5.5rem;
+    }
+}

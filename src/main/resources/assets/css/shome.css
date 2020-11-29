@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+/* ---------------------------------------------------
+    HOME CONTENT
+----------------------------------------------------- */
+.info a{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    width: 135px;
+    color: #FFF !important;
+    text-decoration: none !important;
+    padding: 15px 25px;
+    margin: 5% auto;
+    background-image: repeating-linear-gradient(#000000, #8B4513);
+    border-radius: 10px;
+    display: inline-block;
+    outline: none;
+    box-shadow: 0 4px #999;
+    transition: 0.5s;
+}
+.info a:hover{
+    background-image: repeating-radial-gradient(#FFFAF0, #8FBC8F);
+    color: #000 !important;
+}
+.info a:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(3px);
+}
+.text-center h1{
+    margin-top: 50px;
+}
+.text-center h3{
+    margin-bottom: 40px;
+}
+.tiramisu_rec img, .greentea_rec img, .waffle_rec img, .pico_rec img{
+    border-radius: 50%;
+    width: 320px;
+    height: 250px;
+}
+/* ---------------------------------------------------
+    MEDIA
+----------------------------------------------------- */
+@media only screen and (max-width: 960px) {
+    .col-md-6 img{
+        width: 300px;
+        height: 230px;
+    }
+}
+

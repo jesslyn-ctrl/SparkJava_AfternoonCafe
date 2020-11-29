@@ -1,0 +1,28 @@
+#parse("/velocity/layout.vm")
+#@mainLayout()
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/sabout.css">
+    <!--Start From Here-->
+    <div class="container-fluid">
+        <div class="container banner text-center">
+            <img src="/images/h/about_h.png" width="200px" height="200px">
+            <div class="container">
+                <h4>Vision</h4>
+                <p>Bring goodness to preserve people's lives by creating and providing
+                    <br>food and beverages with integrity.</p>
+                <div class="line"></div>
+
+                <h4>Mission</h4>
+                <p>We put the best quality and service as the top priority in providing food with integrity to customers.
+                    <br>We are committed to our employees by providing opportunities for their growth and excellence.</p>
+                <div class="line"></div>
+
+                <h4>History</h4>
+                <p>Afternoon Cafe was founded in <i>United States of America</i> on August 28, 2018, under the license of
+                    <br>JAJ Spark Java, Inc. Our cafe already has many branches in many countries,
+                    <br>both in the United States and in Asia. Our cafe has been registered as
+                    <br>a franchise in several countries in the world.</p>
+            </div>
+        </div>
+    </div>
+#end

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* ---------------------------------------------------
+    NAVBAR
+----------------------------------------------------- */
+.navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: rgba(78, 46, 40, 0.6)!important;
+}
+.navbar-brand img{
+    height: 2.8rem;
+    width: 8rem;
+}
+
+/* ---------------------------------------------------
+    JUMBOTRON
+----------------------------------------------------- */
+.display-3{
+    margin-top: 5rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-shadow: 2px 3px #999;
+}
+.checkCart{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    width: 150px;
+    padding: 8px 18px;
+    color: #FFF !important;
+    text-decoration: none !important;
+    background-image: repeating-linear-gradient(#8B4513, #000000);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 4px #999;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.checkCart:hover{
+    color: #000 !important;
+    background-image: radial-gradient(#FFFFFF, #8FBC8F);
+    cursor: pointer;
+}

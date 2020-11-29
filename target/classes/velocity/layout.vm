@@ -1,0 +1,71 @@
+#macro(mainLayout)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Afternoon Café: Customer Experiences</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/slayout.css">
+    <!--Font Awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <!--Navigation Bar(Header)-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="$WebPath.getHOME()"><img src="/images/AceLogo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="$WebPath.getHOME()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="$WebPath.getMENU()">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="$WebPath.getMUSIC()">Music</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="$WebPath.getABOUT()">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main">
+        $bodyContent
+    </main>
+
+    <!--Footer-->
+    <div id="footer" class="clearfix text-center full-grid">
+        <div class="footer-bottom">
+            <div class="bg_footer1"><img src="/images/cof1.png"></div>
+            <div class="bg_footer2"><img src="/images/cof2.png"></div>
+            <div class="left grid-3-foot text center">
+                <div class="container">
+                    <img src="/images/delivery.png"><b><h4>1-777-808</h4></b>
+                    <h6>&copy; 2019 </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src = "https://unpkg.com/feather-icons"></script>
+    <script>feather.replace()</script>
+</body>
+</html>
+#end
